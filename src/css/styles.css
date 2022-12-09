@@ -6,7 +6,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(233, 229, 229);
+  background-color: lightgrey;
   color: #313131;
   line-height: 1.5;
 }
