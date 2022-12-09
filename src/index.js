@@ -26,6 +26,7 @@ function searchQuery() {
 	const name = search.value.trim()
 	if (name) {
 		fetchCountries(name)
+      /* .then(console.log) */
 			.then(response => {
 				if (response.length > 10) {
 					Notify.info('Too many matches found. Please enter a more specific name.')
