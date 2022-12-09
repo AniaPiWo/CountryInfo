@@ -1,14 +1,7 @@
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { debounce } from 'lodash';
 
-const _ = require('lodash');
-/* // Using _.debounce() method
-// with its parameters
-var debounce_fun = _.debounce(function () {
-  console.log('Function debounced after 1000ms!');
-  }, 1000);
-  
-debounce_fun();  */
 const DEBOUNCE_DELAY = 300;
 
 function fetchCountries(name) {
@@ -25,7 +18,7 @@ const search = document.querySelector('#search-box')
 const list = document.querySelector('.country-list')
 const info = document.querySelector('.country-info')
 
-search.addEventListener('input', _.debounce(searchQuery, DEBOUNCE_DELAY));
+search.addEventListener('input', debounce(searchQuery, DEBOUNCE_DELAY));
 
 function searchQuery() {
 	list.innerHTML = '';
