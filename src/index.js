@@ -1,18 +1,9 @@
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { debounce } from 'lodash';
+import { fetchCountries } from './fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
-
-function fetchCountries(name) {
-	return fetch('https://restcountries.com/v3.1/name/' + name + '?fields=name,capital,population,flags,languages')
-		.then(response => {
-			if (!response.ok) {
-				throw new Error(response.status);
-			}
-			return response.json();
-		})
-}
 
 const search = document.querySelector('#search-box')
 const list = document.querySelector('.country-list')
